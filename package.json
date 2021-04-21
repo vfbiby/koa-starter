@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "James Zhang <liulfbaby@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.13.1"
+  }
 }

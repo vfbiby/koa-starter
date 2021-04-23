@@ -11,16 +11,28 @@ const auth = async (ctx: any, next: any) => {
   await next();
 };
 
-router.get('/', auth, async (ctx: any) => {
+router.get('/', async (ctx: any) => {
   ctx.body = 'index page';
 });
 
-usersRouter.get('/', auth, async (ctx: any) => {
-  ctx.body = 'this user list';
+usersRouter.get('/', async (ctx: any) => {
+  ctx.body = [{ name: 'linei' }, { name: 'hanmeimei' }];
 });
 
-usersRouter.get('/:id', auth, async (ctx: any) => {
-  ctx.body = `this is user ${ctx.params.id}`;
+usersRouter.post('/', async (ctx: any) => {
+  ctx.body = { name: 'linei' };
+});
+
+usersRouter.get('/:id', async (ctx: any) => {
+  ctx.body = { name: 'linei' };
+});
+
+usersRouter.put('/:id', async (ctx: any) => {
+  ctx.body = { name: 'linei2' };
+});
+
+usersRouter.delete('/:id', async (ctx: any) => {
+  ctx.status = 204;
 });
 
 app.use(router.routes());

@@ -25,4 +25,5 @@ usersRouter.get('/:id', auth, async (ctx: any) => {
 
 app.use(router.routes());
 app.use(usersRouter.routes());
+app.use(usersRouter.allowedMethods());
 app.listen(3003);

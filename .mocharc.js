@@ -8,10 +8,10 @@ module.exports = {
 	//是不是默认启动就使用watch模式
 	watch: false,
 	//测试文件的匹配规则
-	spec: ['{test,src}/**/*.test.{ts,tsx}'],
+	spec: ['{test,src}/**/*.{spec,test}.{ts,tsx}'],
 	//以通知的方式弹出测试结果
-	growl: true,
+	growl: false,
 	//预先加载的库，比如babel，ts-node等
-	require: ['ts-node/register'],
+	require: ['ts-node/register', 'chai/register-expect', 'chai/register-should'],
 	ui: 'bdd',
 };

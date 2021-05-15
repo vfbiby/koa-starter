@@ -1,4 +1,3 @@
-const expect = require('chai').expect;
 
 it('Simeple test', () => {
   let a: number = 3;

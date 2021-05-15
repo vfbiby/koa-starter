@@ -1,5 +1,4 @@
 import app from './app';
-import { expect } from "chai";
 import sinon from 'sinon';
 
 const mockListen = sinon.fake();

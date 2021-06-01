@@ -1,9 +1,10 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+import { loadModel } from './utils';
 
-const { Schema, model } = mongoose;
+const { Schema } = mongoose;
 
 const UserSchema = new Schema({
     name: { type: String, require: true },
 });
 
-export = model('User', UserSchema);
+export = loadModel('User', UserSchema);

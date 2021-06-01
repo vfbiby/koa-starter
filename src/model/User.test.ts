@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-const User = require('./User');
+import User from './User';
 
 describe('User Model', () => {
     beforeEach(async () => {

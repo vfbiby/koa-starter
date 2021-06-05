@@ -10,18 +10,18 @@ describe('User Model', () => {
         clearDatabase();
     });
 
-    it('should return empty array when user collection is not filled', async () => {
+    it('应该在每次启动时返回空的collection', async () => {
         const users = await User.find();
         users.should.deep.equal([]);
     });
 
-    it('should store data which fields on the model', async () => {
+    it('应该存储在model上定义过的列', async () => {
         await new User({ name: 'vfbiby' }).save();
         const user = await User.find({ name: 'vfbiby' });
         user.toString().should.include('vfbiby');
     });
 
-    it('should ingore column when saving the data', async () => {
+    it('应该忽略没有在model定义过的属性', async () => {
         await new User({ name: 'vfbiby', propertyNotOnTheModel: 20 }).save();
         const user = await User.find({ name: 'vfbiby' });
         user.toString().should.not.include(20);

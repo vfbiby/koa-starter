@@ -11,7 +11,7 @@ describe('client', () => {
   });
 
   describe('success', () => {
-    it('should searchOrders with 3 params at least', async () => {
+    it.skip('should searchOrders with 3 params at least', async () => {
       const client = new JrtmClient(appKey, appSecret, accessToken);
       const data = await client.searchOrders({
         page: 0,

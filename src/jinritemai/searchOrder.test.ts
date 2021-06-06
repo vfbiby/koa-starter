@@ -1,4 +1,4 @@
-import { JrtmClient } from './client';
+import { JrtmClient } from './searchOrder';
 import { dateToSecond } from './utils';
 
 describe('client', () => {

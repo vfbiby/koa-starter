@@ -11,7 +11,7 @@ describe('client', () => {
   });
 
   describe('success', () => {
-    it.skip('should searchOrders with 3 params at least', async () => {
+    it('应该需要至少3个参数才能搜索订单', async () => {
       const client = new JrtmClient(appKey, appSecret, accessToken);
       const data = await client.searchOrders({
         page: 0,
@@ -27,7 +27,7 @@ describe('client', () => {
   });
 
   describe('failure', () => {
-    it('should throw error while app_key is not valid', async () => {
+    it('应该在app_key无效时抛出异常', async () => {
       const inValidAppKey = '6959524271349777952';
       appKey = inValidAppKey;
       const client = new JrtmClient(inValidAppKey, appSecret, accessToken);

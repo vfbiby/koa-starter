@@ -1,7 +1,7 @@
 import { JrtmClient } from './searchOrder';
 import { dateToSecond } from './utils';
 
-describe('client', () => {
+describe('搜索订单', () => {
   let appKey: string, appSecret: string, accessToken: string;
 
   beforeEach(() => {
@@ -10,7 +10,7 @@ describe('client', () => {
     accessToken = process.env.ACCESSTOKEN ? process.env.ACCESSTOKEN : '';
   });
 
-  describe('success', () => {
+  describe('成功的情况', () => {
     it('应该需要至少3个参数才能搜索订单', async () => {
       const client = new JrtmClient(appKey, appSecret, accessToken);
       const data = await client.searchOrders({
@@ -26,7 +26,7 @@ describe('client', () => {
     });
   });
 
-  describe('failure', () => {
+  describe('失败的情况', () => {
     it('应该在app_key无效时抛出异常', async () => {
       const inValidAppKey = '6959524271349777952';
       appKey = inValidAppKey;
